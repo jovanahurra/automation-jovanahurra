@@ -3,6 +3,8 @@
 import * as loginFuncs from '../integration/pages/indexPage'
 import * as dashboardFuncs from '../integration/pages/dashboardPage'
 import * as roomFuncs from '../integration/pages/roomsPage'
+import * as clientFuncs from '../integration/pages/clientsPage'
+import * as reservationFuncs from '../integration/pages/reservationsPage'
 import * as targets from '../integration/targets/targets'
 
 /*beforeEach( ()=>{
@@ -45,14 +47,28 @@ afterEach( ()=>{
         dashboardFuncs.reservationsView(cy)
     })
     // Test case 5
-    // Create a room
-    it('Create a new room', function(){
+    // Create and delete a room
+    it('Create and delete a new room', function(){
         dashboardFuncs.roomsView(cy)
         roomFuncs.createNewRoom(targets.roomCategory, targets.roomNr, targets.roomFloor, targets.roomPrice, targets.roomFeatures)
         cy.contains('.card', targets.roomNr)
         roomFuncs.deleteRoom(cy)
-
     })
-
+    // Test case 6
+    // Create and delete a client
+    it('Create and delete a new client', function(){
+        dashboardFuncs.clientsView(cy)
+        clientFuncs.createNewClient(targets.clientName, targets.clientEmail, targets.clientTel)
+        cy.contains('.card', targets.clientName)
+        clientFuncs.deleteClient(cy)
+    })
+    // Test case 7
+    // Create and delete a reservation
+    it('Create and detele a reservation', function(){
+        dashboardFuncs.reservationsView(cy)
+        reservationFuncs.createNewReservation(targets.startDate, targets.endDate)
+        cy.contains('.card', targets.startDate, targets.endDate)
+        reservationFuncs.deleteReservation(cy)
+    })
 
 })
