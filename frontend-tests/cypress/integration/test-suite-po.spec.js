@@ -7,14 +7,7 @@ import * as clientFuncs from '../integration/pages/clientsPage'
 import * as reservationFuncs from '../integration/pages/reservationsPage'
 import * as targets from '../integration/targets/targets'
 
-/*beforeEach( ()=>{
-    cy.visit(targets.base_url)
-    loginFuncs.checkTitleOfIndexPage
-    loginFuncs.performValidLogin(cy, targets.username, targets.password, 'Tester Hotel Overview')
-})
-afterEach( ()=>{
-    dashboardFuncs.performLogout(cy, 'Login')
-})*/
+
 // Test suite
 describe ('Test suite PO', function(){
     beforeEach( ()=>{

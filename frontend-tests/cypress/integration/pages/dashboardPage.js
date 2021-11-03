@@ -7,6 +7,7 @@ const roomsViewBtn = ':nth-child(1) > .btn'
 const clientsViewBtn = '.blocks > :nth-child(2) > .btn'
 const billsViewBtn = ':nth-child(3) > .btn'
 const reservationsViewBtn = ':nth-child(4) > .btn'
+const h2 = 'h2 > div'
 const roomsConfirm = 'Rooms'
 const clientsConfirm = 'Clients'
 const billsConfirm = 'Bills'
@@ -21,7 +22,7 @@ function performLogout (cy, contentToConfirm){
 
 function roomsView (cy, contentToConfirm){
     cy.get(roomsViewBtn).click()
-    cy.get('h2 > div').should("contain", roomsConfirm)
+    cy.get(h2).should("contain", roomsConfirm)
 }
 function clientsView (cy, contentToConfirm){
     cy.get(clientsViewBtn).click()
@@ -29,11 +30,11 @@ function clientsView (cy, contentToConfirm){
 }
 function billsView (cy, contentToConfirm){
     cy.get(billsViewBtn).click()
-    cy.get('h2 > div').should("contain", billsConfirm)
+    cy.get(h2).should("contain", billsConfirm)
 }
 function reservationsView (cy, contentToConfirm){
     cy.get(reservationsViewBtn).click()
-    cy.get('h2 > div').should("contain", reservationsConfirm)
+    cy.get(h2).should("contain", reservationsConfirm)
 }
 
 
