@@ -10,12 +10,14 @@ import * as targets from '../integration/targets/targets'
 
 // Test suite
 describe ('Test suite PO', function(){
+    // Before each test case, visit website nad login 
     beforeEach( ()=>{
     cy.visit(targets.base_url)
     loginFuncs.checkTitleOfIndexPage
     loginFuncs.performValidLogin(cy, targets.username, targets.password, 'Tester Hotel Overview')
 })
-afterEach( ()=>{
+    // After each test case, logout
+    afterEach( ()=>{
     dashboardFuncs.performLogout(cy, 'Login')
 })
     

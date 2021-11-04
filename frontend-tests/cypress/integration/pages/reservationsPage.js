@@ -16,6 +16,7 @@ const reservationMenu = ':nth-child(2) > .action > img'
 const deleteReserationBtn = '.menu > :nth-child(2)'
 
 // Actions/Functions
+// Create reservation
 function createNewReservation (startDate, endDate){
     cy.get(createReservationBtn).click()
     cy.get(h2).should('contain', h2Reservation)
@@ -27,6 +28,7 @@ function createNewReservation (startDate, endDate){
     cy.get(saveBtn).click()
     cy.contains(startDate).should('exist')
 }
+// Delete reservation
 function deleteReservation (cy){
     cy.get(reservationMenu).click()
     cy.get(deleteReserationBtn).click()

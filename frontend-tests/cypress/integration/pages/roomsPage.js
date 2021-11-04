@@ -17,6 +17,7 @@ const roomMenuBtn = ':nth-child(3) > .action > img'
 const deleteRoomBtn = '.menu > :nth-child(2)'
 
 // Actions/Functions
+// Create room
 function createNewRoom (roomCategory, roomNr, roomFloor, roomPrice, roomFeatures){
 cy.get(createRoomBtn).click()
 cy.get(h2).should('contain', h2Room)
@@ -29,6 +30,7 @@ cy.get(featuresField).select(roomFeatures)
 cy.get(saveBtn).click()
 cy.contains(roomNr).should('exist')
 }
+// Delete room
 function deleteRoom (cy){
 cy.get(roomMenuBtn).click()
 cy.get(deleteRoomBtn).click()
